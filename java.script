@@ -1,0 +1,45 @@
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('literaryModal');
+  const openBtn = document.getElementById('openModalBtn');
+  const closeX = document.getElementById('closeModalBtn');
+  const closeFooterBtn = document.getElementById('closeModalFooterBtn');
+
+  // Verifica se todos os elementos realmente existem na página antes de aplicar os cliques
+  if (modal && openBtn) {
+    // Abre o modal
+    openBtn.addEventListener('click', () => {
+      modal.showModal();
+    });
+
+    // Fecha o modal no 'X'
+    if (closeX) {
+      closeX.addEventListener('click', () => {
+        modal.close();
+      });
+    }
+
+    // Fecha o modal no botão do rodapé
+    if (closeFooterBtn) {
+      closeFooterBtn.addEventListener('click', () => {
+        modal.close();
+      });
+    }
+
+    // Fecha o modal ao clicar fora dele (na parte escura)
+    modal.addEventListener('click', (e) => {
+      const dialogDimensions = modal.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        modal.close();
+      }
+    });
+  } else {
+    console.error("Erro Café Literário: Botão ou Modal não foram encontrados no HTML. Verifique os IDs.");
+  }
+});

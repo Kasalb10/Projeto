@@ -1,0 +1,46 @@
+.modalOverlay {
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgba(236, 116, 37, 0.632);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: rgb(100, 245, 180);
+  width: 300px;
+  height: 300px;
+  border-radius: 10%;
+}
+img {
+  width: 200px;
+}
+
+body {
+  background-color: rgba(255, 191, 0, 0.274);
+  font-size: medium;
+  text-align: center;
+  color: rgb(167, 175, 45);
+}
+
+#lancamento {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+header {
+  background-image: url("Café literário.png");
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header button {
+  height: 20px;
+}

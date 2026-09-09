@@ -64,9 +64,14 @@ header button {
 
 
 #lancamento {
-    display: grid;                    
+  /* display: grid;Transforma o elemento HTML em um contêiner de grade (Grid Container). 
+  A partir desse momento, todos os elementos que estiverem diretamente dentro dele se tornam "itens da grade" e passam a aceitar o alinhamento em linhas e colunas. */
+    display: grid;   
+                     /* grid-template-columns: repeat(4, 1fr);Define a estrutura das colunas da sua grade. */
     grid-template-columns: repeat(4, 1fr); 
-    gap: 24px;                       
+    /* gap: 24px;Define o espaçamento interno */
+    gap: 24px;    
+                       /* margin: 20px 0;Controla o espaçamento externo  */
     margin: 20px 0;                  
 }
 
@@ -143,9 +148,21 @@ header button {
 }
 
 
-#maisprocuradostop5 {
-    display: grid;                    /* Ativa o layout em grade */
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas do mesmo tamanho */
-    gap: 24px;                       /* Espaço de 24px entre os cards */
-    margin: 20px 0;                  /* Espaço acima e abaixo */
+#TOP {
+   display: flex;  
+   flex-direction: column;                   
+    grid-template-columns: repeat(5, 1fr); 
+                        
+             justify-content: center;        /* Centraliza horizontalmente */
+      margin: 0;   
+      width: 100%;                    /* Largura total do card */
+    height: 350px;                  /* ALTURA FIXA PARA TODAS AS IMAGENS */
+    object-fit: cover;              /* Preenche o espaço sem distorcer */
+    display: block;                 /* Remove espaços extras abaixo da imagem */
+    background-color: #f17878;    
+}
+#TOP > div:hover {
+    transform: translateY(-6px);    
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+    transition: all;
 }

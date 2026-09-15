@@ -46,6 +46,8 @@ class Personagem(Entidade):
     def __init__(self, nome: str, vida: int):
         super().__init__(nome, vida)
 
+        print(f"{self.nome} não possui música tema definida.")
+
 
 class Musica:
 
@@ -53,6 +55,9 @@ class Musica:
         self.titulo = titulo
         self.artista = artista
 
+        
+        mucica = "videoplayback.wav"
+        winsound.PlaySound(mucica, winsound.SND_FILENAME)
 
 class Inimigo(Entidade):
 
@@ -111,3 +116,5 @@ falcao = Inimigo("Falcão", 80, 15)
 
 falcao.adicionar_musica_tema(musica1)
 falcao.tocar_musica_tema()
+
+

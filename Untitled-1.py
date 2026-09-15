@@ -1,6 +1,4 @@
-# entidade.py
 
-Get-Content "Untitled-1.py" | Select-Object -First 40
 
 class Entidade:
     """Classe base para qualquer ser vivo no jogo."""
@@ -17,15 +15,15 @@ class Entidade:
             print(f"{self.nome} já está derrotado.")
             return 0
 
-        dano_real = min(dano, self.vida)  # não passa do que tem
+        dano_real = min(dano, self.vida) 
         self.vida -= dano_real
 
         if self.vida <= 0:
             self.vida = 0
             self.estavivo = False
-            print(f"💀 {self.nome} PERDEU!")
+            print(f"{self.nome} PERDEU!")
         else:
-            print(f"❤️ {self.nome} recebeu {dano_real} de dano. Vida: {self.vida}")
+            print(f"{self.nome} recebeu {dano_real} de dano. Vida: {self.vida}")
 
         return dano_real
 
@@ -36,7 +34,7 @@ class Entidade:
             return
 
         self.vida = min(self.vida + quantidade, self.vida_maxima)
-        print(f"✨ {self.nome} foi curado. Vida: {self.vida}")
+        print(f"{self.nome} foi curado. Vida: {self.vida}")
 
     def esta_vivo(self) -> bool:
         return self.estavivo
@@ -46,17 +44,15 @@ class Entidade:
         return f"{self.nome} ({status}) - Vida: {self.vida}/{self.vida_maxima}"
 
 
-# ---------- Classes filhas ----------
-
 class Personagem(Entidade):
 
     
     def __init__(self, nome: str, vida: int):
-        super().__init__(nome, vida)  # chama o __init__ da classe mãe
+        super().__init__(nome, vida)  
 
 
 class Inimigo(Entidade):
-    """Herda tudo de Entidade + tem dano de ataque."""
+    
 
     def __init__(self, nome: str, vida: int, dano: int):
         super().__init__(nome, vida)
@@ -66,7 +62,7 @@ class Inimigo(Entidade):
         if not self.estavivo:
             print(f"{self.nome} está derrotado e não pode atacar.")
             return
-        print(f"⚔️ {self.nome} ataca {alvo.nome}!")
+        print(f"{self.nome} ataca {alvo.nome}!")
         alvo.receber_dano(self.dano)
 
     def __str__(self):
@@ -84,17 +80,15 @@ print(heroi)
 print(orc)
 print()
 
-# Turno 1
+
 orc.atacar(heroi)
 heroi.receber_dano(35)
 
-# Turno 2
 orc.atacar(heroi)
-heroi.receber_dano(50)  # Orc morre
+heroi.receber_dano(50)  
 
-# Testa cura
 heroi.curar(20)
-heroi.curar(100)  # não passa do máximo
+heroi.curar(100) 
 
 print()
 print(heroi)

@@ -1,168 +1,291 @@
-.modalOverlay {
-  height: 100vh;
-  width: 100vw;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Literário - Teste de Layout</title>
+  <style>
+    /* 1. CONFIGURAÇÕES GERAIS E BODY */
+    body {
+      background-color: #fdf6ec; /* Tom creme/livro antigo */
+      font-size: 32px;
+      color: #4a2c11; /* Marrom café escuro (alto contraste) */
+      margin: 0;
+      font-family: sans-serif;
+      line-height: 0.6;
+    }
 
-  background-color: rgba(236, 116, 37, 0.632);
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    /* CONTAINER PRINCIPAL */
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 200px 20px;
+      text-align: center; /* Centraliza cabeçalhos e imagens */
+    }
 
-#frase > div {
-    background-color: #3710e4;       
-    border-radius: 12px;            
-    box-shadow: 0 4px 12px rgba(190, 162, 162, 0.1); 
-    overflow: hidden;                
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    /* CONFIGURAÇÕES DE IMAGEM */
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    /* ALINHAMENTO DE TEXTO */
+    p {
+      text-align: left; /* Garante boa legibilidade para blocos de texto */
+      max-width: 600px;
+      margin: 10px auto 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Todo o conteúdo visível do site entra aqui -->
+  <div class="wrapper">
     
-    
-    display: flex;                   
-    flex-direction: column;          
-    height: 15%;                   
-    min-height: 50px;              
-}
+    <header>
+      <h1>Café Literário</h1>
+      <p style="text-align: center; font-style: italic;">"Um bom livro e uma xícara de café quente."</p>
+    </header>
+
+    <main>
+      <img src="https://unsplash.com" alt="Xícara de café expresso">
+      
+      <h2>Sobre o Projeto</h2>
+      <p>
+        O Café Literário é um espaço conceitual projetado para amantes da leitura e entusiastas do café. 
+        Este layout foi otimizado para oferecer uma experiência visual confortável, utilizando cores quentes 
+        e tipografia legível que evitam a fadiga ocular durante a navegação.
+      </p>
+    </main>
+
+    <footer>
+      <hr>
+      <p style="text-align: center; font-size: 14px;">&copy; 2026 Café Literário. Todos os direitos reservados.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
 
 
+  <div class="container">
+    <h1>Bem-vindo ao Café Literário</h1>
+    <p>Este é um ambiente feito para testar o layout de nossa nova página. Aqui ajustamos o contraste para garantir que todos consigam ler confortavelmente enquanto apreciam um bom café virtual.</p>
+    <img src="https://placeholder.com" alt="Xícara de café ao lado de um livro aberto">
+  </div>
 
-.modal {
-  background-color: rgb(100, 245, 180);
-  width: 300px;
-  height: 300px;
-  border-radius: 10%;
-}
-img {
-  width: 200px;
-}
+</body>
+</html>
 
-body {
-  background-color: rgba(255, 191, 0, 0.274);
-  font-size: medium;
-  text-align: center;
-  color: rgb(167, 175, 45);
-}
+    img {
+      width: 200px;
+    }
 
-#lancamento {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-}
+    /* ==========================================================================
+       2. HEADER (CABEÇALHO)
+       ========================================================================== */
+    header {
+      /* Adicionado uma cor de fundo reserva caso a imagem não carregue */
+      background-color: #4a3319;
+      background-image: url("Café literário.png");
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      box-sizing: border-box;
+    }
 
-header {
-  background-image: url("Café literário.png");
-  height: 500px;
-  display: flex;
-  justify-content: space-between;
-}
+    header button {
+      height: 20px; /* Aumentado ligeiramente para ficar clicável */
+      padding: 0 15px;
+    }
 
-header button {
-  height: 20px;
-}
+    /* ==========================================================================
+       3. SEÇÃO LANÇAMENTOS (GRID DE PRODUTOS/LIVROS)
+       ========================================================================== */
+    #lancamento {
+        display: grid;   
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Responsivo: se ajusta a telas menores */
+        gap: 24px;    
+        margin: 20px auto;                  
+        max-width: 2000px;
+        padding: 0 50px;
+    }
 
+    #lancamento > div {
+        background-color: #ffffff;        
+        border-radius: 12px;            
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+        overflow: hidden;               
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        display: flex;                   
+        flex-direction: column;          
+        height: 100%;                   
+        min-height: 250px;             
+    }
 
+    #lancamento > div:hover {
+        transform: translateY(-6px);     
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+    }
 
-#lancamento {
-  /* display: grid;Transforma o elemento HTML em um contêiner de grade (Grid Container). 
-  A partir desse momento, todos os elementos que estiverem diretamente dentro dele se tornam "itens da grade" e passam a aceitar o alinhamento em linhas e colunas. */
-    display: grid;   
-                     /* grid-template-columns: repeat(4, 1fr);Define a estrutura das colunas da sua grade. */
-    grid-template-columns: repeat(4, 1fr); 
-    /* gap: 24px;Define o espaçamento interno */
-    gap: 24px;    
-                       /* margin: 20px 0;Controla o espaçamento externo  */
-    margin: 20px 0;                  
-}
+    /* CORRIGIDO: Chave de fechamento inserida aqui no final do seletor */
+    #lancamento > div img {
+        width: 100%;                    
+        height: 450px; /* Ideal seria reduzido de 400px para equilibrar com o min-height do card, mas 450px permite a leitura total dos títulos. */                 
+        object-fit: cover;            
+        display: block;                
+           
+    }
 
+    #lancamento > div h3 {
+        padding: 12px 16px 16px;        
+        margin: 0;                  
+        font-size: 1rem;             
+        font-weight: 700;             
+        color: #1a1a2e;               
+        text-align: center;          
+        min-height: 3.2rem;           
+        display: flex;                 
+        align-items: center;            
+        justify-content: center;        
+        line-height: 1.3;               
+    }
 
-#lancamento > div {
-    background-color: #ffffff;        /* Fundo branco */
-    border-radius: 12px;             /* Cantos arredondados */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow: hidden;                /* Esconde o que ultrapassar */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave no hover */
-    
-    /* --- FORÇA TODOS OS CARDS COM O MESMO TAMANHO --- */
-    display: flex;                   /* Ativa layout flexível */
-    flex-direction: column;          /* Organiza os itens em coluna */
-    height: 100%;                   /* Ocupa toda a altura disponível */
-    min-height: 350px;              /* Altura mínima para todos */
-}
+    /* ==========================================================================
+       4. SEÇÃO TOP (DESTAQUES) - CORRIGIDA
+       ========================================================================== */
+    #TOP {
+        display: grid; /* CORRIGIDO: Conflito removido. Se usa Grid, não usa Flex-direction */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+        gap: 15px;
+        margin: 40px auto;   
+        width: 100%;  
+        max-width: 1200px;
+        padding: 20px;
+        background-color: #f17878;    
+        box-sizing: border-box;
+    }
 
-#lancamento > div:hover {
-    transform: translateY(-6px);     /* Levanta o card quando o mouse passa */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Sombra maior no hover */
-}
+    /* Adicionado estilo para os filhos de #TOP fazerem sentido visual */
+    #TOP > div {
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/*
-📌 EXPLICAÇÃO:
-- #lancamento > div → seleciona cada div dentro do #lancamento
-- display: flex + flex-direction: column → organiza imagem em cima, título embaixo
-- min-height: 350px → TODOS os cards terão pelo menos 350px de altura
-- overflow: hidden → se algo ultrapassar, é cortado (útil para imagens)
-- transition → faz o card "flutuar" suavemente quando o mouse passa
-*/
+    #TOP > div:hover {
+        transform: translateY(-6px);    
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+    }
 
+    /* ==========================================================================
+       5. MODAL OVERLAY E ELEMENTOS DE DESTAQUE (FRASES)
+       ========================================================================== */
+    #frase > div {
+        background-color: #3710e4;       
+        border-radius: 12px;            
+        box-shadow: 0 4px 12px rgba(190, 162, 162, 0.1); 
+        overflow: hidden;                
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        display: flex;                   
+        flex-direction: column;          
+        height: 15%;                   
+        min-height: 50px;              
+        color: white;
+        justify-content: center;
+        margin: 20px auto;
+        max-width: 400px;
+    }
 
-/* ============================================
-   PASSO 4.3.3 - CONFIGURAÇÃO DAS IMAGENS
-   ============================================ */
+    /* IMPORTANTE: Comente ou remova o código abaixo se não quiser a tela travada pelo modal */
+    .modalOverlay {
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(236, 116, 37, 0.632);
+      position: fixed; /* Trocado de absolute para fixed para cobrir a tela inteira */
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999; /* Garante que fica por cima de tudo */
+    }
 
-#lancamento > div img {
-    width: 100%;                    /* Largura total do card */
-    height: 400px;                  /* ALTURA FIXA PARA TODAS AS IMAGENS */
-    object-fit: cover;              /* Preenche o espaço sem distorcer */
-    display: block;                 /* Remove espaços extras abaixo da imagem */
-    background-color: #f0f0f0;      /* Cor de fundo enquanto a imagem não carrega */
-}
+    .modal {
+      background-color: rgb(100, 245, 180);
+      width: 300px;
+      height: 300px;
+      border-radius: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
 
-/*
-📌 EXPLICAÇÃO:
-- height: 260px → TODAS as imagens terão exatamente 260px de altura
-- object-fit: cover → a imagem é cortada para preencher o espaço, mantendo a proporção
-  (se a imagem for mais alta, corta em cima/baixo; se for mais larga, corta nas laterais)
-- width: 100% → a imagem ocupa toda a largura do card
-- display: block → remove um pequeno espaço que aparece abaixo das imagens
-*/
+  <!-- 1. HEADER -->
+  <header>
+    <button>Menu</button>
+    <h1 style="color: white; margin: auto;">Café Literário</h1>
+    <button>Contato</button>
+  </header>
 
+  <!-- 2. FRASE -->
+  <div id="frase">
+    <div>
+      <p>A leitura é uma porta aberta para o mundo.</p>
+    </div>
+  </div>
 
-/* ============================================
-   PASSO 4.3.4 - CONFIGURAÇÃO DOS TÍTULOS
-   ============================================ */
+  <!-- 3. SEÇÃO LANÇAMENTOS -->
+  <h2>Novos Lançamentos</h2>
+  <div id="lancamento">
+    <div>
+      <img src="https://picsum.photos" alt="Livro 1">
+      <h3>O Guia do Programador POO</h3>
+    </div>
+    <div>
+      <img src="https://picsum.photos" alt="Livro 2">
+      <h3>Estruturas de Dados Limpas</h3>
+    </div>
+    <div>
+      <img src="https://picsum.photos" alt="Livro 3">
+      <h3>Design Patterns em Python</h3>
+    </div>
+    <div>
+      <img src="https://picsum.photos" alt="Livro 4">
+      <h3>Lógica de Combate em RPGs</h3>
+    </div>
+  </div>
 
-#lancamento > div h3 {
-    padding: 12px 16px 16px;        /* Espaço interno: em cima, laterais, embaixo */
-    margin: 0;                      /* Remove a margem padrão */
-    font-size: 1rem;                /* Tamanho da fonte */
-    font-weight: 700;               /* Negrito */
-    color: #1a1a2e;                /* Cor escura */
-    text-align: center;             /* Centraliza o texto */
-    
-    /* --- GARANTE ALTURA FIXA PARA ALINHAR TODOS OS TÍTULOS --- */
-    min-height: 3.2rem;             /* Altura mínima para caber ~2 linhas */
-    display: flex;                  /* Ativa flex para centralizar */
-    align-items: center;            /* Centraliza verticalmente */
-    justify-content: center;        /* Centraliza horizontalmente */
-    line-height: 1.3;               /* Espaçamento entre linhas */
-}
+  <!-- 4. SEÇÃO TOP -->
+  <h2>Top Destaques</h2>
+  <div id="TOP">
+    <div><h4 style="color:#1a1a2e">#1 Python Pro</h4></div>
+    <div><h4 style="color:#1a1a2e">#2 Clean Code</h4></div>
+    <div><h4 style="color:#1a1a2e">#3 CSS Avançado</h4></div>
+    <div><h4 style="color:#1a1a2e">#4 Algoritmos</h4></div>
+  </div>
 
+  <!-- 5. TELA DE MODAL (OVERLAY) -->
+  <!-- DICA: Se quiser esconder o modal para ver o fundo, mude no CSS de "display: flex" para "display: none" em .modalOverlay -->
+  <div class="modalOverlay">
+    <div class="modal">
+      <h3>Aviso do Sistema</h3>
+      <p>Bem-vindo à Arena dos Livros!</p>
+      <button onclick="document.querySelector('.modalOverlay').style.display='none'">Fechar Modal</button>
+    </div>
+  </div>
 
-#TOP {
-   display: flex;  
-   flex-direction: column;                   
-    grid-template-columns: repeat(5, 1fr); 
-                        
-             justify-content: center;        /* Centraliza horizontalmente */
-      margin: 0;   
-      width: 100%;                    /* Largura total do card */
-    height: 350px;                  /* ALTURA FIXA PARA TODAS AS IMAGENS */
-    object-fit: cover;              /* Preenche o espaço sem distorcer */
-    display: block;                 /* Remove espaços extras abaixo da imagem */
-    background-color: #f17878;    
-}
-#TOP > div:hover {
-    transform: translateY(-6px);    
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
-    transition: all;
-}
+</body>
+</html>
